@@ -47,14 +47,25 @@
 
     <p>This image is a beautiful reminder of their love.</p>
 
-    <!-- Automatically plays the music in the background -->
-    <audio autoplay loop hidden>
+    <!-- Audio element -->
+    <audio id="loveSong" loop>
         <source src="ho.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
+    <p>Listen to the song that reminds them of their love.</p>
+
     <a href="https://www.facebook.com/profile.php?id=100089311244717" class="fb-button" target="_blank">Visit Philip's Facebook Page</a><br>
     
     <a href="https://www.facebook.com/profile.php?id=100082468661231" class="fb-button" target="_blank">Visit Elmera's Facebook Page</a>
+
+    <script>
+        window.addEventListener('load', function() {
+            var audio = document.getElementById('loveSong');
+            audio.play().catch(error => {
+                console.log('Autoplay prevented:', error);
+            });
+        });
+    </script>
 </body>
 </html>
